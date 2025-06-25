@@ -85,6 +85,11 @@
   --primary-hover: #166fe5;
   --secondary: #f0f2f5;
   --secondary-hover: #e4e6e9;
+
+  --color-background-main: #1c1c1d;
+  --color-background-secondary: #3b3d3e;
+  --color-text-primary: #1e2939;
+  --color-text-secondary: #b0b3b8;
 }
 
 .dark {
@@ -123,4 +128,9 @@
   --primary-hover: #4599ff;
   --secondary: #3a3b3c;
   --secondary-hover: #4e4f50;
+
+  --color-background-main: #1c1c1d;
+  --color-background-secondary: #3b3d3e;
+  --color-text-primary: #e2e5e9;
+  --color-text-secondary: #b0b3b8;
 }
