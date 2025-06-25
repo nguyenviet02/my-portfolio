@@ -3,7 +3,7 @@ import { ThumbsUp, MessageSquare, Share2, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profile from '@/data/profile';
 
-const PostCard = ({ post }) => {
+const ProjectCard = ({ post }) => {
   const [liked, setLiked] = useState(false);
 
   const toggleLike = () => {
@@ -32,7 +32,7 @@ const PostCard = ({ post }) => {
 
       {/* Post Content */}
       <div className="px-4 pb-3">
-        <p className="text-gray-800 dark:text-gray-100 mb-3">{post.description}</p>
+        <div className="text-gray-800 dark:text-gray-100 mb-3" dangerouslySetInnerHTML={{ __html: post.description }} />
       </div>
 
       {/* Post Image */}
@@ -86,4 +86,4 @@ const PostCard = ({ post }) => {
   );
 };
 
-export default PostCard;
+export default ProjectCard;

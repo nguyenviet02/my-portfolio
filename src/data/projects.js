@@ -2,17 +2,14 @@
 const projects = [
 	{
 		id: 1,
-		username: 'John Doe',
-		userImage: '/default.jpg',
-		date: 'June 15, 2024',
+		date: 'April, 2022',
 		projectType: 'Web Development',
-		title: 'E-commerce Platform',
-		description: 'Just launched a new e-commerce platform built with React, Node.js and MongoDB. Features include user authentication, product search, cart functionality, payment processing, and order management.',
-		image: 'https://via.placeholder.com/800x400',
+		title: 'E-learning Platform',
+		description: `Just launched a new e-learning platform built with React, Node.js and MongoDB. <a href="https://tek4.vn" target="_blank">tek4.vn</a>`,
+		image: 'src/assets/images/projects/tek4.png',
 		technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
 		likes: 24,
-		comments: 5,
-		shares: 2
+		comments: 5
 	},
 	{
 		id: 2,

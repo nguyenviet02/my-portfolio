@@ -1,6 +1,6 @@
 import React from 'react';
 import CreatePost from '@/components/projects/CreateProject';
-import PostCard from '@/components/projects/ProjectCard';
+import ProjectCard from '@/components/projects/ProjectCard';
 import { FadeIn, SlideIn } from '@/components/Animation';
 import { projects } from '@/data';
 
@@ -13,7 +13,7 @@ const Home = () => {
 
       {projects.map((project, index) => (
         <SlideIn key={project.id} delay={200 + index * 100}>
-          <PostCard post={project} />
+          <ProjectCard post={project} />
         </SlideIn>
       ))}
     </div>

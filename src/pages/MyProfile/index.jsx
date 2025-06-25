@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Briefcase, BookOpen } from 'lucide-react';
-import PostCard from '@/components/projects/ProjectCard';
+import ProjectCard from '@/components/projects/ProjectCard';
 import { FadeIn, SlideIn } from '@/components/Animation';
 import { projects, profile, skills } from '@/data';
 
@@ -82,7 +82,7 @@ const MyProfile = () => {
           <div>
             {projects.map((project, index) => (
               <SlideIn key={project.id} delay={200 + index * 100}>
-                <PostCard post={project} />
+                <ProjectCard post={project} />
               </SlideIn>
             ))}
           </div>
