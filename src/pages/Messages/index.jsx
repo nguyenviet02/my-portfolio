@@ -1,15 +1,13 @@
-import { Mail, Phone, Github, Linkedin, Instagram, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FadeIn, SlideIn } from '@/components/Animation';
+import { contactInfo } from '@/data';
 
 const ContactCard = ({ icon, title, value, link, buttonText, delay }) => (
   <SlideIn delay={delay}>
     <div className="bg-white dark:bg-[#242526] rounded-lg shadow mb-5 overflow-hidden">
       <div className="p-6">
         <div className="flex items-center gap-4">
-          <div className="bg-blue-100 dark:bg-blue-900/30 rounded-full p-4">
-            {icon}
-          </div>
+          <div className="bg-blue-100 dark:bg-blue-900/30 rounded-full p-4">{icon}</div>
           <div className="flex-1">
             <h3 className="text-lg font-medium text-gray-800 dark:text-gray-100">{title}</h3>
             <p className="text-gray-600 dark:text-gray-300">{value}</p>
@@ -32,9 +30,7 @@ const ContactCard = ({ icon, title, value, link, buttonText, delay }) => (
 const MessageForm = () => (
   <FadeIn delay={300}>
     <div className="bg-white dark:bg-[#242526] rounded-lg shadow mb-5 p-6">
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
-        Send Me a Message
-      </h2>
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Send Me a Message</h2>
       <form className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -89,37 +85,6 @@ const MessageForm = () => (
 );
 
 const Messages = () => {
-  const contactInfo = [
-    {
-      icon: <Mail className="w-6 h-6 text-blue-500" />,
-      title: 'Email',
-      value: 'john.doe@example.com',
-      link: 'mailto:john.doe@example.com',
-      buttonText: 'Send Email'
-    },
-    {
-      icon: <Phone className="w-6 h-6 text-blue-500" />,
-      title: 'Phone',
-      value: '+1 (234) 567-8900',
-      link: 'tel:+12345678900',
-      buttonText: 'Call Me'
-    },
-    {
-      icon: <Github className="w-6 h-6 text-blue-500" />,
-      title: 'GitHub',
-      value: 'github.com/username',
-      link: 'https://github.com/username',
-      buttonText: 'View Profile'
-    },
-    {
-      icon: <Linkedin className="w-6 h-6 text-blue-500" />,
-      title: 'LinkedIn',
-      value: 'linkedin.com/in/username',
-      link: 'https://linkedin.com/in/username',
-      buttonText: 'Connect'
-    }
-  ];
-
   return (
     <div className="max-w-4xl mx-auto">
       <FadeIn>
@@ -132,15 +97,7 @@ const Messages = () => {
       <div className="grid md:grid-cols-2 gap-5">
         <div>
           {contactInfo.map((contact, index) => (
-            <ContactCard
-              key={index}
-              icon={contact.icon}
-              title={contact.title}
-              value={contact.value}
-              link={contact.link}
-              buttonText={contact.buttonText}
-              delay={100 + (index * 100)}
-            />
+            <ContactCard key={index} icon={contact.icon} title={contact.title} value={contact.value} link={contact.link} buttonText={contact.buttonText} delay={100 + index * 100} />
           ))}
         </div>
         <div>
@@ -151,4 +108,4 @@ const Messages = () => {
   );
 };
 
-export default Messages; 
+export default Messages;

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Pencil, MapPin, Briefcase, BookOpen, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { MapPin, Briefcase, BookOpen } from 'lucide-react';
 import PostCard from '@/components/posts/PostCard';
 import { FadeIn, SlideIn } from '@/components/Animation';
+import { projects, profile, skills } from '@/data';
 
 const ProfileSection = ({ title, children, delay = 0 }) => (
   <SlideIn delay={delay}>
@@ -15,73 +15,13 @@ const ProfileSection = ({ title, children, delay = 0 }) => (
 
 const MyProfile = () => {
   const [activeTab, setActiveTab] = useState('posts');
-  
-  // Sample profile data
-  const profile = {
-    name: 'John Doe',
-    title: 'Full Stack Developer',
-    location: 'San Francisco, CA',
-    coverImage: 'https://via.placeholder.com/1200x400',
-    about: 'Passionate full stack developer with 5 years of experience building web and mobile applications. Specialized in React, Node.js, and cloud technologies.'
-  };
-
-  // Sample project posts
-  const projects = [
-    {
-      id: 1,
-      username: profile.name,
-      userImage: '/default.jpg',
-      date: 'June 15, 2024',
-      projectType: 'Web Development',
-      title: 'E-commerce Platform',
-      description: 'Just launched a new e-commerce platform built with React, Node.js and MongoDB.',
-      image: 'https://via.placeholder.com/800x400',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      likes: 24,
-      comments: 5,
-      shares: 2
-    },
-    {
-      id: 2,
-      username: profile.name,
-      userImage: '/default.jpg',
-      date: 'May 22, 2024',
-      projectType: 'Mobile App',
-      title: 'Fitness Tracker',
-      description: 'Developed a fitness tracking app that helps users monitor their workouts.',
-      image: 'https://via.placeholder.com/800x400',
-      technologies: ['React Native', 'Firebase'],
-      likes: 37,
-      comments: 8,
-      shares: 4
-    }
-  ];
-
-  // Sample skills data
-  const skills = [
-    { category: 'Frontend', items: ['React', 'JavaScript', 'CSS/SCSS', 'HTML5', 'Redux', 'TypeScript'] },
-    { category: 'Backend', items: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Firebase'] },
-    { category: 'DevOps', items: ['Docker', 'CI/CD', 'AWS', 'Git'] },
-    { category: 'Tools', items: ['VSCode', 'Figma', 'Postman', 'Jira'] }
-  ];
 
   return (
     <div>
       {/* Cover Photo */}
       <FadeIn>
         <div className="relative h-[200px] md:h-[350px] w-full bg-gray-300 rounded-b-lg overflow-hidden">
-          <img 
-            src={profile.coverImage} 
-            alt="Cover" 
-            className="w-full h-full object-cover"
-          />
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="absolute bottom-4 right-4 bg-white dark:bg-[#3A3B3C] rounded-full shadow"
-          >
-            <Pencil className="w-5 h-5" />
-          </Button>
+          <img src={profile.coverImage} alt="Cover" className="w-full h-full object-cover" />
         </div>
       </FadeIn>
 
@@ -90,14 +30,10 @@ const MyProfile = () => {
         {/* Profile Picture */}
         <SlideIn direction="up">
           <div className="absolute -top-24 left-6 h-40 w-40 rounded-full border-4 border-white dark:border-[#242526] overflow-hidden bg-white shadow">
-            <img 
-              src="/default.jpg" 
-              alt={profile.name} 
-              className="h-full w-full object-cover"
-            />
+            <img src="/default.jpg" alt={profile.name} className="h-full w-full object-cover" />
           </div>
         </SlideIn>
-        
+
         {/* Name and Title */}
         <FadeIn delay={200}>
           <div className="pt-20 pb-4 flex flex-col md:flex-row md:items-end md:justify-between">
@@ -109,9 +45,6 @@ const MyProfile = () => {
                 {profile.location}
               </div>
             </div>
-            <div className="mt-4 md:mt-0">
-              <Button>Edit Profile</Button>
-            </div>
           </div>
         </FadeIn>
 
@@ -121,31 +54,19 @@ const MyProfile = () => {
             <div className="flex">
               <button
                 onClick={() => setActiveTab('posts')}
-                className={`px-4 py-3 font-medium ${
-                  activeTab === 'posts'
-                    ? 'text-blue-500 border-b-2 border-blue-500'
-                    : 'text-gray-600 dark:text-gray-300'
-                }`}
+                className={`px-4 py-3 font-medium ${activeTab === 'posts' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 Posts
               </button>
               <button
                 onClick={() => setActiveTab('about')}
-                className={`px-4 py-3 font-medium ${
-                  activeTab === 'about'
-                    ? 'text-blue-500 border-b-2 border-blue-500'
-                    : 'text-gray-600 dark:text-gray-300'
-                }`}
+                className={`px-4 py-3 font-medium ${activeTab === 'about' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 About
               </button>
               <button
                 onClick={() => setActiveTab('skills')}
-                className={`px-4 py-3 font-medium ${
-                  activeTab === 'skills'
-                    ? 'text-blue-500 border-b-2 border-blue-500'
-                    : 'text-gray-600 dark:text-gray-300'
-                }`}
+                className={`px-4 py-3 font-medium ${activeTab === 'skills' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 Skills
               </button>
@@ -159,7 +80,7 @@ const MyProfile = () => {
         {activeTab === 'posts' && (
           <div>
             {projects.map((project, index) => (
-              <SlideIn key={project.id} delay={200 + (index * 100)}>
+              <SlideIn key={project.id} delay={200 + index * 100}>
                 <PostCard post={project} />
               </SlideIn>
             ))}
@@ -222,13 +143,10 @@ const MyProfile = () => {
         {activeTab === 'skills' && (
           <div>
             {skills.map((skill, index) => (
-              <ProfileSection key={index} title={skill.category} delay={100 + (index * 100)}>
+              <ProfileSection key={index} title={skill.category} delay={100 + index * 100}>
                 <div className="flex flex-wrap gap-2">
                   {skill.items.map((item, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-gray-100 dark:bg-[#3A3B3C] text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full"
-                    >
+                    <span key={idx} className="bg-gray-100 dark:bg-[#3A3B3C] text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full">
                       {item}
                     </span>
                   ))}
