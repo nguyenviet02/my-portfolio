@@ -146,9 +146,10 @@ const MyProfile = () => {
               <ProfileSection key={index} title={skill.category} delay={100 + index * 100}>
                 <div className="flex flex-wrap gap-2">
                   {skill.items.map((item, idx) => (
-                    <span key={idx} className="bg-gray-100 dark:bg-[#3A3B3C] text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full">
-                      {item}
-                    </span>
+                    <div key={idx} className="flex items-center gap-2 bg-gray-100 px-3 py-1 dark:bg-[#3A3B3C] rounded-full">
+                      <img src={item.icon} alt={item.name} className="w-4 h-4" />
+                      <span className=" text-gray-800 dark:text-gray-200 font-medium text-sm">{item.name}</span>
+                    </div>
                   ))}
                 </div>
               </ProfileSection>
