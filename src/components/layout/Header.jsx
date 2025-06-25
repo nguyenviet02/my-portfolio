@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Search, Home, MessageCircle, User, Bell, Menu, Mail, Phone, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Header = () => {
   const location = useLocation();
@@ -105,6 +106,8 @@ const Header = () => {
 
         {/* Right section - Profile */}
         <div className="flex items-center gap-2">
+          <ThemeToggle />
+          
           <Button size="icon" variant="ghost" className="rounded-full">
             <Bell className="w-5 h-5" />
           </Button>
