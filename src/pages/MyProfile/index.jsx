@@ -98,7 +98,7 @@ const MyProfile = () => {
                 <div className="flex">
                   <div className="flex-shrink-0 mr-3">
                     <div className="w-10 h-10 bg-gray-200 dark:bg-[#3A3B3C] rounded flex items-center justify-center">
-                      <Briefcase className="w-5 h-5" />
+                      <Briefcase className="w-5 h-5 text-text-primary" />
                     </div>
                   </div>
                   <div>
@@ -111,7 +111,7 @@ const MyProfile = () => {
                 <div className="flex">
                   <div className="flex-shrink-0 mr-3">
                     <div className="w-10 h-10 bg-gray-200 dark:bg-[#3A3B3C] rounded flex items-center justify-center">
-                      <Briefcase className="w-5 h-5" />
+                      <Briefcase className="w-5 h-5 text-text-primary" />
                     </div>
                   </div>
                   <div>
@@ -127,7 +127,7 @@ const MyProfile = () => {
               <div className="flex">
                 <div className="flex-shrink-0 mr-3">
                   <div className="w-10 h-10 bg-gray-200 dark:bg-[#3A3B3C] rounded flex items-center justify-center">
-                    <BookOpen className="w-5 h-5" />
+                    <BookOpen className="w-5 h-5 text-text-primary" />
                   </div>
                 </div>
                 <div>

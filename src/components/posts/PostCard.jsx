@@ -15,11 +15,7 @@ const PostCard = ({ post }) => {
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-full overflow-hidden bg-gray-200">
-            <img 
-              src={post.userImage || "/default.jpg"} 
-              alt={post.username} 
-              className="h-full w-full object-cover"
-            />
+            <img src={post.userImage || '/default.jpg'} alt={post.username} className="h-full w-full object-cover" />
           </div>
           <div>
             <h3 className="font-semibold text-gray-800 dark:text-gray-100">{post.username}</h3>
@@ -29,7 +25,7 @@ const PostCard = ({ post }) => {
           </div>
         </div>
         <Button variant="ghost" size="icon" className="rounded-full">
-          <MoreHorizontal className="w-5 h-5" />
+          <MoreHorizontal className="w-5 h-5 text-text-primary" />
         </Button>
       </div>
 
@@ -41,11 +37,7 @@ const PostCard = ({ post }) => {
       {/* Post Image */}
       {post.image && (
         <div className="w-full">
-          <img 
-            src={post.image} 
-            alt={post.title} 
-            className="w-full object-cover max-h-[500px]"
-          />
+          <img src={post.image} alt={post.title} className="w-full object-cover max-h-[500px]" />
         </div>
       )}
 
@@ -53,10 +45,7 @@ const PostCard = ({ post }) => {
       {post.technologies && post.technologies.length > 0 && (
         <div className="px-4 pt-3 flex flex-wrap gap-1">
           {post.technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="bg-gray-100 dark:bg-[#3A3B3C] text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded-full"
-            >
+            <span key={index} className="bg-gray-100 dark:bg-[#3A3B3C] text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded-full">
               {tech}
             </span>
           ))}
@@ -79,27 +68,15 @@ const PostCard = ({ post }) => {
 
       {/* Post Actions */}
       <div className="flex items-center px-2 py-1">
-        <Button
-          variant="ghost"
-          onClick={toggleLike}
-          className={`flex-1 rounded-md ${
-            liked ? 'text-blue-500' : 'text-gray-600 dark:text-gray-300'
-          }`}
-        >
+        <Button variant="ghost" onClick={toggleLike} className={`flex-1 rounded-md ${liked ? 'text-blue-500' : 'text-gray-600 dark:text-gray-300'}`}>
           <ThumbsUp className="w-5 h-5 mr-2" />
           Like
         </Button>
-        <Button
-          variant="ghost"
-          className="flex-1 rounded-md text-gray-600 dark:text-gray-300"
-        >
+        <Button variant="ghost" className="flex-1 rounded-md text-gray-600 dark:text-gray-300">
           <MessageSquare className="w-5 h-5 mr-2" />
           Comment
         </Button>
-        <Button
-          variant="ghost"
-          className="flex-1 rounded-md text-gray-600 dark:text-gray-300"
-        >
+        <Button variant="ghost" className="flex-1 rounded-md text-gray-600 dark:text-gray-300">
           <Share2 className="w-5 h-5 mr-2" />
           Share
         </Button>
@@ -108,4 +85,4 @@ const PostCard = ({ post }) => {
   );
 };
 
-export default PostCard; 
+export default PostCard;
