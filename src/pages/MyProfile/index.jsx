@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Briefcase, BookOpen } from 'lucide-react';
-import PostCard from '@/components/posts/PostCard';
+import PostCard from '@/components/projects/ProjectCard';
 import { FadeIn, SlideIn } from '@/components/Animation';
 import { projects, profile, skills } from '@/data';
 
@@ -14,14 +14,14 @@ const ProfileSection = ({ title, children, delay = 0 }) => (
 );
 
 const MyProfile = () => {
-  const [activeTab, setActiveTab] = useState('posts');
+  const [activeTab, setActiveTab] = useState('projects');
 
   return (
     <div>
       {/* Cover Photo */}
       <FadeIn>
-        <div className="relative h-[200px] md:h-[350px] w-full bg-gray-300 rounded-b-lg overflow-hidden">
-          <img src={profile.coverImage} alt="Cover" className="w-full h-full object-cover" />
+        <div className="relative h-[250px] md:h-[400px] w-full bg-gray-300 rounded-b-lg overflow-hidden">
+          <img src={profile.coverImage} alt="Cover" className="w-full h-full object-cover object-[5%]" />
         </div>
       </FadeIn>
 
@@ -30,20 +30,21 @@ const MyProfile = () => {
         {/* Profile Picture */}
         <SlideIn direction="up">
           <div className="absolute -top-24 left-6 h-40 w-40 rounded-full border-4 border-white dark:border-[#242526] overflow-hidden bg-white shadow">
-            <img src="/default.jpg" alt={profile.name} className="h-full w-full object-cover" />
+            <img src={profile.avatar} alt={profile.name} className="h-full w-full object-cover" />
           </div>
         </SlideIn>
 
         {/* Name and Title */}
         <FadeIn delay={200}>
           <div className="pt-20 pb-4 flex flex-col md:flex-row md:items-end md:justify-between">
-            <div>
+            <div className="flex flex-col gap-1">
               <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100">{profile.name}</h1>
               <p className="text-gray-600 dark:text-gray-300">{profile.title}</p>
               <div className="flex items-center mt-1 text-gray-500 dark:text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 mr-1" />
                 {profile.location}
               </div>
+              <p className="text-text-primary">{profile.about}</p>
             </div>
           </div>
         </FadeIn>
@@ -53,10 +54,10 @@ const MyProfile = () => {
           <div className="border-t border-gray-300 dark:border-gray-700">
             <div className="flex">
               <button
-                onClick={() => setActiveTab('posts')}
-                className={`px-4 py-3 font-medium ${activeTab === 'posts' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
+                onClick={() => setActiveTab('projects')}
+                className={`px-4 py-3 font-medium ${activeTab === 'projects' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
-                Posts
+                Projects
               </button>
               <button
                 onClick={() => setActiveTab('about')}
@@ -77,7 +78,7 @@ const MyProfile = () => {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-6">
-        {activeTab === 'posts' && (
+        {activeTab === 'projects' && (
           <div>
             {projects.map((project, index) => (
               <SlideIn key={project.id} delay={200 + index * 100}>

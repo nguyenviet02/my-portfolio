@@ -1,5 +1,6 @@
 import { Image, Link, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import profile from '@/data/profile';
 
 const CreatePost = () => {
   return (
@@ -7,7 +8,7 @@ const CreatePost = () => {
       <div className="flex items-center gap-3">
         <div className="h-10 w-10 rounded-full overflow-hidden bg-gray-200">
           <img 
-            src="/default.jpg" 
+            src={profile.avatar}
             alt="Profile" 
             className="h-full w-full object-cover"
           />

@@ -3,6 +3,7 @@ import { Search, Home, MessageCircle, User, Bell, Menu, Mail, Phone, Github, Lin
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import profile from '@/data/profile';
 
 const Header = () => {
   const location = useLocation();
@@ -60,7 +61,7 @@ const Header = () => {
         {/* Left section - Logo and Search */}
         <div className="flex items-center gap-2">
           <Link to="/" className="text-blue-500 text-2xl font-bold">
-            P
+            <img src="src/assets/logo.png" alt="Logo" className="w-10 h-10" />
           </Link>
           <div className="hidden md:flex relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
@@ -141,7 +142,7 @@ const Header = () => {
 
           <Link to="/profile">
             <div className="h-10 w-10 rounded-full bg-gray-200 overflow-hidden border-2 border-gray-300">
-              <img src="/default.jpg" alt="Profile" className="h-full w-full object-cover" />
+              <img src={profile.avatar} alt="Profile" className="h-full w-full object-cover" />
             </div>
           </Link>
 

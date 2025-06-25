@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ThumbsUp, MessageSquare, Share2, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import profile from '@/data/profile';
 
 const PostCard = ({ post }) => {
   const [liked, setLiked] = useState(false);
@@ -15,10 +16,10 @@ const PostCard = ({ post }) => {
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-full overflow-hidden bg-gray-200">
-            <img src={post.userImage || '/default.jpg'} alt={post.username} className="h-full w-full object-cover" />
+            <img src={profile.avatar} alt={post.username} className="h-full w-full object-cover" />
           </div>
           <div>
-            <h3 className="font-semibold text-gray-800 dark:text-gray-100">{post.username}</h3>
+            <h3 className="font-semibold text-gray-800 dark:text-gray-100">{profile.name}</h3>
             <p className="text-xs text-gray-500 dark:text-gray-400">
               {post.date} • {post.projectType}
             </p>

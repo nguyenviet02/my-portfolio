@@ -1,6 +1,6 @@
 import React from 'react';
-import CreatePost from '@/components/posts/CreatePost';
-import PostCard from '@/components/posts/PostCard';
+import CreatePost from '@/components/projects/CreateProject';
+import PostCard from '@/components/projects/ProjectCard';
 import { FadeIn, SlideIn } from '@/components/Animation';
 import { projects } from '@/data';
 

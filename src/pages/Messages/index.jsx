@@ -2,35 +2,36 @@ import { FadeIn } from '@/components/Animation';
 import { Mail, Phone, Github, Linkedin } from 'lucide-react';
 import ContactCard from './ContactCard';
 import MessageForm from './MessageForm';
+import profile from '@/data/profile';
 
 const Messages = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6 text-blue-500" />,
       title: 'Email',
-      value: 'john.doe@example.com',
-      link: 'mailto:john.doe@example.com',
+      value: profile.email,
+      link: `mailto:${profile.email}`,
       buttonText: 'Send Email',
     },
     {
       icon: <Phone className="w-6 h-6 text-blue-500" />,
       title: 'Phone',
-      value: '+1 (234) 567-8900',
-      link: 'tel:+12345678900',
+      value: profile.phone,
+      link: `tel:${profile.phone}`,
       buttonText: 'Call Me',
     },
     {
       icon: <Github className="w-6 h-6 text-blue-500" />,
       title: 'GitHub',
-      value: 'github.com/username',
-      link: 'https://github.com/username',
+      value: profile.github,
+      link: profile.github,
       buttonText: 'View Profile',
     },
     {
       icon: <Linkedin className="w-6 h-6 text-blue-500" />,
       title: 'LinkedIn',
-      value: 'linkedin.com/in/username',
-      link: 'https://linkedin.com/in/username',
+      value: profile.linkedin,
+      link: profile.linkedin,
       buttonText: 'Connect',
     },
   ];

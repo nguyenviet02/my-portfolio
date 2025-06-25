@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, MessageCircle, Phone } from 'lucide-react';
+import profile from '@/data/profile';
 
 const ContactItem = ({ icon, text, link }) => (
   <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#3A3B3C] transition-colors">
@@ -12,22 +13,22 @@ const RightSidebar = () => {
     {
       icon: <Github className="w-5 h-5 text-text-primary" />,
       text: 'GitHub',
-      link: 'https://github.com/username',
+      link: profile.github,
     },
     {
       icon: <Linkedin className="w-5 h-5 text-text-primary" />,
       text: 'LinkedIn',
-      link: 'https://linkedin.com/in/username',
+      link: profile.linkedin,
     },
     {
       icon: <Mail className="w-5 h-5 text-text-primary" />,
       text: 'Email',
-      link: 'mailto:email@example.com',
+      link: `mailto:${profile.email}`,
     },
     {
       icon: <Phone className="w-5 h-5 text-text-primary" />,
-      text: '+1 234 567 8900',
-      link: 'tel:+12345678900',
+      text: profile.phone,
+      link: `tel:${profile.phone}`,
     },
     {
       icon: <MessageCircle className="w-5 h-5 text-text-primary" />,
