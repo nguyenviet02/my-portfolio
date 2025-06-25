@@ -1,12 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, Home, MessageCircle, User, Bell, Menu, Mail, Phone, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 const Header = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  
   const contactInfo = [
-    {
-      icon: <Mail className="w-5 h-5 text-blue-500" />,
+    { 
+      icon: <Mail className="w-5 h-5 text-blue-500" />, 
       title: 'Email',
       value: 'john.doe@example.com',
     },
@@ -45,6 +48,11 @@ const Header = () => {
     },
   ];
 
+  const isActive = (path) => {
+    if (path === '/' && currentPath === '/') return true;
+    return currentPath === path || (path !== '/' && currentPath.startsWith(path));
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white dark:bg-[#242526] shadow z-10 h-14">
       <div className="container mx-auto h-full flex items-center justify-between px-4">
@@ -62,13 +70,34 @@ const Header = () => {
         {/* Center section - Navigation */}
         <nav className="hidden md:flex flex-1 justify-center">
           <div className="flex items-center">
-            <Link to="/" className="px-6 py-2 mx-2 border-b-4 border-blue-500 text-blue-500">
+            <Link 
+              to="/" 
+              className={`px-6 py-2 mx-2 border-b-4 ${
+                isActive('/') 
+                  ? 'border-blue-500 text-blue-500' 
+                  : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg'
+              }`}
+            >
               <Home className="w-6 h-6" />
             </Link>
-            <Link to="/messages" className="px-6 py-2 mx-2 border-b-4 border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg">
+            <Link 
+              to="/messages" 
+              className={`px-6 py-2 mx-2 border-b-4 ${
+                isActive('/messages') 
+                  ? 'border-blue-500 text-blue-500' 
+                  : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg'
+              }`}
+            >
               <MessageCircle className="w-6 h-6" />
             </Link>
-            <Link to="/profile" className="px-6 py-2 mx-2 border-b-4 border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg">
+            <Link 
+              to="/profile" 
+              className={`px-6 py-2 mx-2 border-b-4 ${
+                isActive('/profile') 
+                  ? 'border-blue-500 text-blue-500' 
+                  : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg'
+              }`}
+            >
               <User className="w-6 h-6" />
             </Link>
           </div>
@@ -79,7 +108,7 @@ const Header = () => {
           <Button size="icon" variant="ghost" className="rounded-full">
             <Bell className="w-5 h-5" />
           </Button>
-
+          
           {/* Message Circle with Popover on mobile */}
           <Popover>
             <PopoverTrigger asChild>
@@ -107,18 +136,18 @@ const Header = () => {
               </div>
             </PopoverContent>
           </Popover>
-
+          
           {/* Not mobile */}
           <Button size="icon" variant="ghost" className="rounded-full hidden md:flex">
             <MessageCircle className="w-5 h-5" />
           </Button>
-
+          
           <Link to="/profile">
             <div className="h-10 w-10 rounded-full bg-gray-200 overflow-hidden border-2 border-gray-300">
               <img src="/default.jpg" alt="Profile" className="h-full w-full object-cover" />
             </div>
           </Link>
-
+          
           {/* Menu with Popover on mobile */}
           <Popover>
             <PopoverTrigger asChild>
@@ -132,9 +161,29 @@ const Header = () => {
                   <h3 className="font-semibold text-sm">Menu</h3>
                 </div>
                 {menuItems.map((item, index) => (
-                  <Link key={index} to={item.path} className="flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-[#4E4F50]">{item.icon}</div>
-                    <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{item.title}</span>
+                  <Link 
+                    key={index} 
+                    to={item.path} 
+                    className={`flex items-center gap-3 p-3 rounded-lg ${
+                      isActive(item.path)
+                        ? 'bg-gray-100 dark:bg-[#3A3B3C] text-blue-500'
+                        : 'hover:bg-gray-100 dark:hover:bg-[#3A3B3C]'
+                    }`}
+                  >
+                    <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
+                      isActive(item.path) 
+                        ? 'bg-blue-100 dark:bg-blue-900/30' 
+                        : 'bg-gray-200 dark:bg-[#4E4F50]'
+                    }`}>
+                      {item.icon}
+                    </div>
+                    <span className={`text-sm font-medium ${
+                      isActive(item.path)
+                        ? 'text-blue-500'
+                        : 'text-gray-800 dark:text-gray-200'
+                    }`}>
+                      {item.title}
+                    </span>
                   </Link>
                 ))}
               </div>
