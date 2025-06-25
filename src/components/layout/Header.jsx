@@ -61,7 +61,7 @@ const Header = () => {
         {/* Left section - Logo and Search */}
         <div className="flex items-center gap-2">
           <Link to="/" className="text-blue-500 text-2xl font-bold">
-            <img src="src/assets/logo.png" alt="Logo" className="w-10 h-10" />
+            <img src="/logo.png" alt="Logo" className="w-10 h-10" />
           </Link>
           <div className="hidden md:flex relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />

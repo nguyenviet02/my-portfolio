@@ -6,7 +6,7 @@ const projects = [
 		projectType: 'Web Development',
 		title: 'E-learning Platform',
 		description: `Just launched a new e-learning platform built with React, Node.js and MongoDB. <a href="https://tek4.vn" target="_blank">tek4.vn</a>`,
-		image: 'src/assets/images/projects/tek4.png',
+		image: '/images/projects/tek4.png',
 		technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
 		likes: 24,
 		comments: 5

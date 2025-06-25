@@ -2,55 +2,55 @@ const skills = [
 	{
 		category: 'Frontend', items: [
 			{
-				icon: 'src/assets/icons/react.svg',
+				icon: '/icons/react.svg',
 				name: 'React',
 			}, {
-				icon: 'src/assets/icons/vue.svg',
+				icon: '/icons/vue.svg',
 				name: 'Vue',
 			}, {
-				icon: 'src/assets/icons/nextjs.svg',
+				icon: '/icons/nextjs.svg',
 				name: 'Next.js',
 			}, {
-				icon: 'src/assets/icons/html-5.svg',
+				icon: '/icons/html-5.svg',
 				name: 'HTML5',
 			}, {
-				icon: 'src/assets/icons/css-3.svg',
+				icon: '/icons/css-3.svg',
 				name: 'CSS/SCSS',
 			}, {
-				icon: 'src/assets/icons/javascript.svg',
+				icon: '/icons/javascript.svg',
 				name: 'JavaScript',
 			}, {
-				icon: 'src/assets/icons/typescript.svg',
+				icon: '/icons/typescript.svg',
 				name: 'TypeScript',
 			}, {
-				icon: 'src/assets/icons/redux.svg',
+				icon: '/icons/redux.svg',
 				name: 'Redux',
 			}, {
-				icon: 'src/assets/icons/zustand.svg',
+				icon: '/icons/zustand.svg',
 				name: 'Zustand',
 			}, {
-				icon: 'src/assets/icons/tailwindcss.svg',
+				icon: '/icons/tailwindcss.svg',
 				name: 'Tailwind CSS',
 			}, {
-				icon: 'src/assets/icons/shadcn-ui.svg',
+				icon: '/icons/shadcn-ui.svg',
 				name: 'Shadcn UI',
 			}, {
-				icon: 'src/assets/icons/material-ui.svg',
+				icon: '/icons/material-ui.svg',
 				name: 'Material UI',
 			}, {
-				icon: 'src/assets/icons/graphql.svg',
+				icon: '/icons/graphql.svg',
 				name: 'GraphQL',
 			}]
 	},
 	{
 		category: 'Tools', items: [{
-			icon: 'src/assets/icons/vscode.svg',
+			icon: '/icons/vscode.svg',
 			name: 'VSCode',
 		}, {
-			icon: 'src/assets/icons/figma.svg',
+			icon: '/icons/figma.svg',
 			name: 'Figma',
 		}, {
-			icon: 'src/assets/icons/postman.svg',
+			icon: '/icons/postman.svg',
 			name: 'Postman',
 		}]
 	},
