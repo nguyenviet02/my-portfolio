@@ -82,7 +82,7 @@ const MyProfile = () => {
           <div>
             {projects.map((project, index) => (
               <SlideIn key={project.id} delay={200 + index * 100}>
-                <ProjectCard post={project} />
+                <ProjectCard project={project} />
               </SlideIn>
             ))}
           </div>
