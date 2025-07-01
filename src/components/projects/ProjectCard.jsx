@@ -42,12 +42,12 @@ const ProjectCard = ({ project }) => {
     // For 3 images - first image takes full width of left column, 2 other images stacked in right column
     if (images.length === 3) {
       return (
-        <div className="grid grid-cols-2 gap-1">
-          <PhotoView src={images[0]}>
-            <div className="row-span-2 h-full">
+        <div className="grid grid-cols-2 grid-rows-2 gap-1">
+          <div className="h-full row-span-2">
+            <PhotoView src={images[0]}>
               <img src={images[0]} alt={`${project.title} - 1`} className="w-full h-full object-cover cursor-pointer" style={{ aspectRatio: '1/2' }} />
-            </div>
-          </PhotoView>
+            </PhotoView>
+          </div>
 
           <div className="grid grid-rows-2 gap-1 h-full row-span-2">
             <PhotoView src={images[1]}>
