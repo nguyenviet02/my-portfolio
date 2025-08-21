@@ -10,7 +10,7 @@ export function ThemeToggle() {
       onClick={toggleTheme} 
       size="icon" 
       variant="ghost" 
-      className="rounded-full"
+      className="rounded-full cursor-target"
       title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
     >
       {theme === 'light' ? (

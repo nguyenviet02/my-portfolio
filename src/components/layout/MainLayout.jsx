@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import RightSidebar from './RightSidebar';
 import { useTheme } from '@/lib/useTheme';
 import DotGrid from '@react-bits/Backgrounds/DotGrid/DotGrid';
+import TargetCursor from '@react-bits/Animations/TargetCursor/TargetCursor';
 
 const MainLayout = () => {
   const { theme } = useTheme();
@@ -13,21 +14,10 @@ const MainLayout = () => {
       {/* Dot Grid Background - only visible in dark mode */}
       {theme === 'dark' && (
         <div className="fixed inset-0 z-0">
-          <DotGrid
-            dotSize={2}
-            gap={24}
-            baseColor="#374151"
-            activeColor="#60A5FA"
-            proximity={100}
-            shockRadius={150}
-            shockStrength={3}
-            resistance={800}
-            returnDuration={1.2}
-            className="w-full h-full"
-          />
+          <DotGrid dotSize={2} gap={24} baseColor="#374151" activeColor="#60A5FA" proximity={100} shockRadius={150} shockStrength={3} resistance={800} returnDuration={1.2} className="w-full h-full" />
         </div>
       )}
-      
+
       {/* Main Content - positioned above the background */}
       <div className="relative z-10">
         <Header />
@@ -39,8 +29,10 @@ const MainLayout = () => {
           <RightSidebar />
         </div>
       </div>
+
+      <TargetCursor />
     </div>
   );
 };
 
-export default MainLayout; 
+export default MainLayout;

@@ -3,7 +3,7 @@ import profile from '@/data/profile';
 import StarBorder from '@react-bits/Animations/StarBorder/StarBorder';
 
 const ContactItem = ({ icon, text, link }) => (
-  <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#3A3B3C] transition-colors">
+  <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#3A3B3C] transition-colors cursor-target">
     <div className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-[#3A3B3C]">{icon}</div>
     <span className="text-gray-800 dark:text-gray-200 text-sm font-medium">{text}</span>
   </a>

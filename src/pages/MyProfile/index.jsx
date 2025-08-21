@@ -74,19 +74,19 @@ const MyProfile = () => {
             <div className="flex">
               <button
                 onClick={() => setActiveTab('projects')}
-                className={`px-4 py-3 font-medium ${activeTab === 'projects' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
+                className={`px-4 py-3 cursor-target font-medium ${activeTab === 'projects' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 Projects
               </button>
               <button
                 onClick={() => setActiveTab('about')}
-                className={`px-4 py-3 font-medium ${activeTab === 'about' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
+                className={`px-4 py-3 cursor-target font-medium ${activeTab === 'about' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 About
               </button>
               <button
                 onClick={() => setActiveTab('skills')}
-                className={`px-4 py-3 font-medium ${activeTab === 'skills' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
+                className={`px-4 py-3 cursor-target font-medium ${activeTab === 'skills' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 Skills
               </button>

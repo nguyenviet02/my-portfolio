@@ -16,7 +16,7 @@ const SkillCategory = ({ category, items, icon, delay = 0, color }) => {
         <div className="p-5">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {items.map((item, idx) => (
-              <div key={idx} className="relative group cursor-pointer" onMouseEnter={() => setHovered(idx)} onMouseLeave={() => setHovered(null)}>
+              <div key={idx} className="relative group cursor-target" onMouseEnter={() => setHovered(idx)} onMouseLeave={() => setHovered(null)}>
                 <div
                   className={`
                   p-3 rounded-md border border-gray-200 dark:border-gray-700
