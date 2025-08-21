@@ -4,6 +4,8 @@ import ProjectCard from '@/components/projects/ProjectCard';
 import { FadeIn, SlideIn } from '@/components/Animation';
 import { projects, profile, skills } from '@/data';
 import FaultyTerminal from '@/components/react-bits/Backgrounds/FaultyTerminal/FaultyTerminal';
+import DecryptedText from '@react-bits/TextAnimations/DecryptedText/DecryptedText';
+import SplitText from '@react-bits/TextAnimations/SplitText/SplitText';
 
 const ProfileSection = ({ title, children, delay = 0 }) => (
   <SlideIn delay={delay}>
@@ -57,13 +59,28 @@ const MyProfile = () => {
         <FadeIn delay={200}>
           <div className="pt-20 pb-4 flex flex-col md:flex-row md:items-end md:justify-between">
             <div className="flex flex-col gap-1">
-              <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100">{profile.name}</h1>
-              <p className="text-gray-600 dark:text-gray-300">{profile.title}</p>
+              <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100">
+                <DecryptedText text={profile.name} speed={100} sequential={true} animateOn="view" revealDirection="start" />
+              </h1>
+              <p className="text-gray-600 dark:text-gray-300">
+                <DecryptedText text={profile.title} speed={100} sequential={true} animateOn="view" revealDirection="start" />
+              </p>
               <div className="flex items-center mt-1 text-gray-500 dark:text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 mr-1" />
-                {profile.location}
+                <DecryptedText text={profile.location} speed={100} sequential={true} animateOn="view" revealDirection="start" />
               </div>
-              <p className="text-text-primary">{profile.about}</p>
+              <SplitText
+                text={profile.about}
+                className="text-text-primary font-semibold"
+                delay={100}
+                duration={0.6}
+                ease="power3.out"
+                splitType="lines"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="left"
+              />
             </div>
           </div>
         </FadeIn>
