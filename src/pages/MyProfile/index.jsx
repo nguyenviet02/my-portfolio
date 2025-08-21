@@ -72,8 +72,8 @@ const MyProfile = () => {
               <SplitText
                 text={profile.about}
                 className="text-text-primary font-semibold"
-                delay={100}
-                duration={0.6}
+                delay={300}
+                duration={1}
                 ease="power3.out"
                 splitType="lines"
                 from={{ opacity: 0, y: 40 }}
