@@ -13,6 +13,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, './src'),
+			'@react-bits': path.resolve(__dirname, './src/components/react-bits'),
 		},
 	},
 });

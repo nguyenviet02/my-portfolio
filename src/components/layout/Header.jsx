@@ -75,7 +75,7 @@ const Header = () => {
             <Link
               to="/"
               className={`px-6 py-2 mx-2 border-b-4 ${
-                isActive('/') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg'
+                isActive('/') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
               }`}
             >
               <Home className="w-6 h-6" />
@@ -83,7 +83,7 @@ const Header = () => {
             <Link
               to="/messages"
               className={`px-6 py-2 mx-2 border-b-4 ${
-                isActive('/messages') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg'
+                isActive('/messages') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
               }`}
             >
               <MessageCircle className="w-6 h-6" />
@@ -91,7 +91,7 @@ const Header = () => {
             <Link
               to="/profile"
               className={`px-6 py-2 mx-2 border-b-4 ${
-                isActive('/profile') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg'
+                isActive('/profile') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
               }`}
             >
               <User className="w-6 h-6" />
@@ -103,7 +103,7 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <ThemeToggle />
 
-          <Button size="icon" variant="ghost" className="rounded-full">
+          <Button size="icon" variant="ghost" className="rounded-full cursor-target">
             <Bell className="w-5 h-5 text-text-primary" />
           </Button>
 
@@ -136,12 +136,12 @@ const Header = () => {
           </Popover>
 
           {/* Not mobile */}
-          <Button size="icon" variant="ghost" className="rounded-full hidden md:flex">
+          <Button size="icon" variant="ghost" className="rounded-full hidden md:flex cursor-target">
             <MessageCircle className="w-5 h-5 text-text-primary" />
           </Button>
 
           <Link to="/profile">
-            <div className="h-10 w-10 rounded-full bg-gray-200 overflow-hidden border-2 border-gray-300">
+            <div className="h-10 w-10 rounded-full bg-gray-200 overflow-hidden border-2 border-gray-300 cursor-target">
               <img src={profile.avatar} alt="Profile" className="h-full w-full object-cover" />
             </div>
           </Link>

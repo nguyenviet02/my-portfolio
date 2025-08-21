@@ -1,8 +1,9 @@
 import { Github, Linkedin, Mail, MessageCircle, Phone } from 'lucide-react';
 import profile from '@/data/profile';
+import StarBorder from '@react-bits/Animations/StarBorder/StarBorder';
 
 const ContactItem = ({ icon, text, link }) => (
-  <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#3A3B3C] transition-colors">
+  <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#3A3B3C] transition-colors cursor-target">
     <div className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-[#3A3B3C]">{icon}</div>
     <span className="text-gray-800 dark:text-gray-200 text-sm font-medium">{text}</span>
   </a>
@@ -39,16 +40,16 @@ const RightSidebar = () => {
 
   return (
     <aside className="hidden lg:block w-[280px] pl-4 py-4 sticky top-16 h-[calc(100vh-64px)] overflow-y-auto">
-      <div className="bg-white dark:bg-[#242526] rounded-lg shadow p-4">
+      <StarBorder as="div" className="rounded-lg w-full" color="magenta" thickness={1} speed="2s">
         <h3 className="text-gray-500 dark:text-gray-400 font-medium text-sm mb-3 px-2">CONTACT INFORMATION</h3>
         <div className="space-y-1">
           {contacts.map((contact, index) => (
             <ContactItem key={index} icon={contact.icon} text={contact.text} link={contact.link} />
           ))}
         </div>
-      </div>
+      </StarBorder>
 
-      <div className="bg-white dark:bg-[#242526] rounded-lg shadow p-4 mt-4">
+      <StarBorder as="div" className="rounded-lg w-full" color="magenta" thickness={1} speed="2s">
         <h3 className="text-gray-500 dark:text-gray-400 font-medium text-sm mb-3 px-2">TECHNOLOGIES</h3>
         <div className="flex flex-wrap gap-2 px-2">
           {['React', 'Tailwind', 'JavaScript', 'Node.js', 'Express', 'MongoDB'].map((tech, index) => (
@@ -57,7 +58,7 @@ const RightSidebar = () => {
             </span>
           ))}
         </div>
-      </div>
+      </StarBorder>
     </aside>
   );
 };

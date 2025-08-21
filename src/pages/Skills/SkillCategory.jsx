@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { SlideIn } from '@/components/Animation';
+import LightRays from '@react-bits/Backgrounds/LightRays/LightRays';
 
 const SkillCategory = ({ category, items, icon, delay = 0, color }) => {
   const [hovered, setHovered] = useState(null);
 
   return (
     <SlideIn delay={delay}>
-      <div className="bg-white dark:bg-[#242526] rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
-        <div className={`p-5 flex items-center gap-4 border-b border-gray-100 dark:border-gray-800`}>
+      <div className="bg-white dark:bg-[#242526] rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg relative">
+        <div className="absolute top-0 left-0 w-full h-full z-0">
+          <LightRays raysOrigin="top-center" raysColor="#00ffff" raysSpeed={1.5} lightSpread={0.8} rayLength={3.5} followMouse={true} mouseInfluence={0.5} noiseAmount={0.1} distortion={0.05} />
+        </div>
+        <div className={`p-5 relative z-10 flex items-center gap-4 border-b border-gray-100 dark:border-gray-800`}>
           <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${color}`}>{icon}</div>
           <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">{category}</h3>
         </div>
@@ -16,7 +20,7 @@ const SkillCategory = ({ category, items, icon, delay = 0, color }) => {
         <div className="p-5">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {items.map((item, idx) => (
-              <div key={idx} className="relative group cursor-pointer" onMouseEnter={() => setHovered(idx)} onMouseLeave={() => setHovered(null)}>
+              <div key={idx} className="relative group cursor-target" onMouseEnter={() => setHovered(idx)} onMouseLeave={() => setHovered(null)}>
                 <div
                   className={`
                   p-3 rounded-md border border-gray-200 dark:border-gray-700

@@ -3,6 +3,9 @@ import { MapPin, Briefcase, BookOpen } from 'lucide-react';
 import ProjectCard from '@/components/projects/ProjectCard';
 import { FadeIn, SlideIn } from '@/components/Animation';
 import { projects, profile, skills } from '@/data';
+import FaultyTerminal from '@/components/react-bits/Backgrounds/FaultyTerminal/FaultyTerminal';
+import DecryptedText from '@react-bits/TextAnimations/DecryptedText/DecryptedText';
+import SplitText from '@react-bits/TextAnimations/SplitText/SplitText';
 
 const ProfileSection = ({ title, children, delay = 0 }) => (
   <SlideIn delay={delay}>
@@ -18,10 +21,28 @@ const MyProfile = () => {
 
   return (
     <div>
-      {/* Cover Photo */}
+      {/* Cover Photo - FaultyTerminal */}
       <FadeIn>
-        <div className="relative h-[250px] md:h-[400px] w-full bg-gray-300 rounded-b-lg overflow-hidden">
-          <img src={profile.coverImage} alt="Cover" className="w-full h-full object-cover object-[5%]" />
+        <div className="relative h-[250px] md:h-[400px] w-full bg-black rounded-b-lg overflow-hidden">
+          <FaultyTerminal
+            scale={1.2}
+            gridMul={[3, 2]}
+            digitSize={1.8}
+            timeScale={0.4}
+            scanlineIntensity={0.4}
+            glitchAmount={1.2}
+            flickerAmount={0.8}
+            noiseAmp={1.1}
+            chromaticAberration={2}
+            dither={0.3}
+            curvature={0.1}
+            tint="#00ff41"
+            mouseReact={true}
+            mouseStrength={0.3}
+            brightness={0.9}
+            pageLoadAnimation={true}
+            className="w-full h-full"
+          />
         </div>
       </FadeIn>
 
@@ -38,13 +59,28 @@ const MyProfile = () => {
         <FadeIn delay={200}>
           <div className="pt-20 pb-4 flex flex-col md:flex-row md:items-end md:justify-between">
             <div className="flex flex-col gap-1">
-              <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100">{profile.name}</h1>
-              <p className="text-gray-600 dark:text-gray-300">{profile.title}</p>
+              <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100">
+                <DecryptedText text={profile.name} speed={100} sequential={true} animateOn="view" revealDirection="start" />
+              </h1>
+              <p className="text-gray-600 dark:text-gray-300">
+                <DecryptedText text={profile.title} speed={100} sequential={true} animateOn="view" revealDirection="start" />
+              </p>
               <div className="flex items-center mt-1 text-gray-500 dark:text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 mr-1" />
-                {profile.location}
+                <DecryptedText text={profile.location} speed={100} sequential={true} animateOn="view" revealDirection="start" />
               </div>
-              <p className="text-text-primary">{profile.about}</p>
+              <SplitText
+                text={profile.about}
+                className="text-text-primary font-semibold"
+                delay={300}
+                duration={1}
+                ease="power3.out"
+                splitType="lines"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="left"
+              />
             </div>
           </div>
         </FadeIn>
@@ -55,19 +91,19 @@ const MyProfile = () => {
             <div className="flex">
               <button
                 onClick={() => setActiveTab('projects')}
-                className={`px-4 py-3 font-medium ${activeTab === 'projects' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
+                className={`px-4 py-3 cursor-target font-medium ${activeTab === 'projects' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 Projects
               </button>
               <button
                 onClick={() => setActiveTab('about')}
-                className={`px-4 py-3 font-medium ${activeTab === 'about' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
+                className={`px-4 py-3 cursor-target font-medium ${activeTab === 'about' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 About
               </button>
               <button
                 onClick={() => setActiveTab('skills')}
-                className={`px-4 py-3 font-medium ${activeTab === 'skills' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
+                className={`px-4 py-3 cursor-target font-medium ${activeTab === 'skills' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600 dark:text-gray-300'}`}
               >
                 Skills
               </button>

@@ -45,7 +45,7 @@ const Sidebar = () => {
           <Link
             key={index}
             to={item.path}
-            className={`flex items-center gap-3 p-2 rounded-lg transition-colors ${isActive(item.path) ? 'bg-gray-200 dark:bg-[#3A3B3C]' : 'hover:bg-gray-200 dark:hover:bg-[#3A3B3C]'}`}
+            className={`flex items-center gap-3 p-2 rounded-lg transition-colors cursor-target ${isActive(item.path) ? 'bg-gray-200 dark:bg-[#3A3B3C]' : 'hover:bg-gray-200 dark:hover:bg-[#3A3B3C]'}`}
           >
             <div className={`flex items-center justify-center w-10 h-10 rounded-full ${isActive(item.path) ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-500' : 'bg-gray-200 dark:bg-[#3A3B3C]'}`}>
               {item.icon}
