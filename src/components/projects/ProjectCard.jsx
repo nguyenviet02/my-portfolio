@@ -81,7 +81,7 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-[#242526] rounded-lg shadow mb-4 overflow-hidden">
+    <div className="bg-white dark:bg-[#242526] rounded-lg shadow mb-4 overflow-hidden px-1">
       {/* Project Header */}
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center gap-3">
