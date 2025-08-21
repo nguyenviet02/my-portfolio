@@ -3,6 +3,7 @@ import { MapPin, Briefcase, BookOpen } from 'lucide-react';
 import ProjectCard from '@/components/projects/ProjectCard';
 import { FadeIn, SlideIn } from '@/components/Animation';
 import { projects, profile, skills } from '@/data';
+import FaultyTerminal from '@/components/react-bits/Backgrounds/FaultyTerminal/FaultyTerminal';
 
 const ProfileSection = ({ title, children, delay = 0 }) => (
   <SlideIn delay={delay}>
@@ -18,10 +19,28 @@ const MyProfile = () => {
 
   return (
     <div>
-      {/* Cover Photo */}
+      {/* Cover Photo - FaultyTerminal */}
       <FadeIn>
-        <div className="relative h-[250px] md:h-[400px] w-full bg-gray-300 rounded-b-lg overflow-hidden">
-          <img src={profile.coverImage} alt="Cover" className="w-full h-full object-cover object-[5%]" />
+        <div className="relative h-[250px] md:h-[400px] w-full bg-black rounded-b-lg overflow-hidden">
+          <FaultyTerminal
+            scale={1.2}
+            gridMul={[3, 2]}
+            digitSize={1.8}
+            timeScale={0.4}
+            scanlineIntensity={0.4}
+            glitchAmount={1.2}
+            flickerAmount={0.8}
+            noiseAmp={1.1}
+            chromaticAberration={2}
+            dither={0.3}
+            curvature={0.1}
+            tint="#00ff41"
+            mouseReact={true}
+            mouseStrength={0.3}
+            brightness={0.9}
+            pageLoadAnimation={true}
+            className="w-full h-full"
+          />
         </div>
       </FadeIn>
 
