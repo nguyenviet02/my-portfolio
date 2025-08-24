@@ -26,11 +26,11 @@ const Sidebar = () => {
       text: 'Contact',
       path: '/messages',
     },
-    {
-      icon: <FileBadge className="w-6 h-6 text-text-primary" />,
-      text: 'Resume',
-      path: '/resume',
-    },
+    // {
+    //   icon: <FileBadge className="w-6 h-6 text-text-primary" />,
+    //   text: 'Resume',
+    //   path: '/resume',
+    // },
   ];
 
   const isActive = (path) => {
@@ -55,7 +55,7 @@ const Sidebar = () => {
         ))}
       </div>
       <div className="border-t border-gray-300 dark:border-gray-700 mt-4 pt-4">
-        <p className="text-xs text-gray-500 dark:text-gray-400 font-medium px-2">© 2024 My Portfolio</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 font-medium px-2">@2025 My Portfolio</p>
       </div>
     </aside>
   );

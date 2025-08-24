@@ -10,7 +10,7 @@ const MainLayout = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-[#F0F2F5] dark:bg-[#18191A] relative">
+    <div className="min-h-screen bg-[#F0F2F5] dark:bg-[#18191A] relative px-0 md:px-4 lg:px-8">
       {/* Dot Grid Background - only visible in dark mode */}
       {theme === 'dark' && (
         <div className="fixed inset-0 z-0">
