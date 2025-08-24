@@ -5,10 +5,19 @@ const useMediaQuery = (query) => {
 
     useEffect(() => {
         const media = window.matchMedia(query);
-        if (media.matches !== matches) {
-            setMatches(media.matches);
-        }
-    }, [matches, query]);
+        
+        // Set initial value
+        setMatches(media.matches);
+        
+        // Create listener function for media query changes
+        const listener = (e) => setMatches(e.matches);
+        
+        // Add event listener for media query changes
+        media.addEventListener('change', listener);
+        
+        // Cleanup listener on unmount or query change
+        return () => media.removeEventListener('change', listener);
+    }, [query]);
 
     return matches;
 };
