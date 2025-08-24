@@ -103,7 +103,7 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <ThemeToggle />
 
-          <Button size="icon" variant="ghost" className="rounded-full cursor-target">
+          <Button size="icon" variant="ghost" className="rounded-full cursor-pointer cursor-target">
             <Bell className="w-5 h-5 text-text-primary" />
           </Button>
 
@@ -111,7 +111,7 @@ const Header = () => {
           <Popover>
             <PopoverTrigger asChild>
               <Button size="icon" variant="ghost" className="rounded-full md:hidden">
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5 text-text-primary" />
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-80" align="end">
@@ -136,9 +136,11 @@ const Header = () => {
           </Popover>
 
           {/* Not mobile */}
-          <Button size="icon" variant="ghost" className="rounded-full hidden md:flex cursor-target">
+          <Link to="/messages">
+          <Button size="icon" variant="ghost" className="rounded-full hidden md:flex cursor-pointer cursor-target">
             <MessageCircle className="w-5 h-5 text-text-primary" />
           </Button>
+          </Link>
 
           <Link to="/profile">
             <div className="h-10 w-10 rounded-full bg-gray-200 overflow-hidden border-2 border-gray-300 cursor-target">
