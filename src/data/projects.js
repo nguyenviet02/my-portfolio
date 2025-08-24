@@ -3,7 +3,7 @@ const projects = [
   // ITS Website
   {
     id: 7,
-    date: "May, 2023",
+    date: "January, 2025",
     projectType: "Web Development",
     title: "ITS Website",
     description: `An official website of Icetea Software built on Wordpress <br />
@@ -22,7 +22,7 @@ const projects = [
   // AI Academy
   {
     id: 6,
-    date: "March, 2023",
+    date: "March, 2025",
     projectType: "Web Development",
     title: "AI Academy",
     description: `Enhanced Learning powered by AI. <br />
@@ -53,7 +53,7 @@ const projects = [
   // Offering Platform
   {
     id: 5,
-    date: "January, 2023",
+    date: "January, 2025",
     projectType: "Web Development",
     title: "Offering Platform",
     description: `Connect, Raise And Invest With Ease. <br /> Offering.fund connects investors directly with premium syndicate deals through various investment channels.<br />
