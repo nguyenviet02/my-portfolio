@@ -11,24 +11,28 @@ const Header = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="w-5 h-5 text-blue-500" />,
+      icon: <Mail className="w-5 h-5 text-blue-500 dark:text-white" />,
       title: 'Email',
-      value: 'john.doe@example.com',
+      value: 'nguyenviet02.dev@gmail.com',
+      link: 'mailto:nguyenviet02.dev@gmail.com',
     },
     {
-      icon: <Phone className="w-5 h-5 text-blue-500" />,
+      icon: <Phone className="w-5 h-5 text-blue-500 dark:text-white" />,
       title: 'Phone',
-      value: '+1 (234) 567-8900',
+      value: '+84946141202',
+      link: 'tel:+84946141202',
     },
     {
-      icon: <Github className="w-5 h-5 text-blue-500" />,
+      icon: <Github className="w-5 h-5 text-blue-500 dark:text-white" />,
       title: 'GitHub',
-      value: 'github.com/username',
+      value: 'github.com/nguyenviet02',
+      link: 'https://github.com/nguyenviet02',
     },
     {
-      icon: <Linkedin className="w-5 h-5 text-blue-500" />,
+      icon: <Linkedin className="w-5 h-5 text-blue-500 dark:text-white" />,
       title: 'LinkedIn',
-      value: 'linkedin.com/in/username',
+      value: 'linkedin.com/in/nguyenviet02',
+      link: 'https://www.linkedin.com/in/nguyenviet02/',
     },
   ];
 
@@ -65,9 +69,9 @@ const Header = () => {
           </Link>
           <div className="hidden lg:flex relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
-            <input 
-              className="bg-gray-100 dark:bg-[#3A3B3C] rounded-full pl-10 pr-4 py-2 focus:outline-none placeholder:text-gray-500 dark:placeholder:text-gray-400 text-sm w-48 xl:w-64 transition-all duration-200" 
-              placeholder="Search..." 
+            <input
+              className="bg-gray-100 dark:bg-[#3A3B3C] rounded-full pl-10 pr-4 py-2 focus:outline-none placeholder:text-gray-500 dark:placeholder:text-gray-400 text-sm w-48 xl:w-64 transition-all duration-200"
+              placeholder="Search..."
             />
           </div>
         </div>
@@ -78,9 +82,7 @@ const Header = () => {
             <Link
               to="/"
               className={`px-3 lg:px-6 py-2 mx-1 lg:mx-2 border-b-4 transition-all duration-200 ${
-                isActive('/') 
-                  ? 'border-blue-500 text-blue-500' 
-                  : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
+                isActive('/') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
               }`}
             >
               <Home className="w-5 h-5 lg:w-6 lg:h-6" />
@@ -88,9 +90,7 @@ const Header = () => {
             <Link
               to="/messages"
               className={`px-3 lg:px-6 py-2 mx-1 lg:mx-2 border-b-4 transition-all duration-200 ${
-                isActive('/messages') 
-                  ? 'border-blue-500 text-blue-500' 
-                  : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
+                isActive('/messages') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
               }`}
             >
               <MessageCircle className="w-5 h-5 lg:w-6 lg:h-6" />
@@ -98,9 +98,7 @@ const Header = () => {
             <Link
               to="/profile"
               className={`px-3 lg:px-6 py-2 mx-1 lg:mx-2 border-b-4 transition-all duration-200 ${
-                isActive('/profile') 
-                  ? 'border-blue-500 text-blue-500' 
-                  : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
+                isActive('/profile') ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg cursor-target'
               }`}
             >
               <User className="w-5 h-5 lg:w-6 lg:h-6" />
@@ -126,23 +124,21 @@ const Header = () => {
             </PopoverTrigger>
             <PopoverContent className="w-80 mr-2" align="end">
               <div className="space-y-2">
-                <h3 className="font-semibold text-sm text-gray-500 dark:text-gray-400 pb-2 border-b dark:border-gray-700">
-                  CONTACT INFORMATION
-                </h3>
+                <h3 className="font-semibold text-sm text-gray-500 dark:text-gray-400 pb-2 border-b dark:border-gray-700">CONTACT INFORMATION</h3>
                 {contactInfo.map((contact, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg transition-colors">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-[#4E4F50]">
-                      {contact.icon}
-                    </div>
+                  <Link key={index} to={contact.link} target="_blank" className="flex items-center gap-3 p-2 hover:bg-gray-100 dark:hover:bg-[#3A3B3C] rounded-lg transition-colors">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-[#4E4F50]">{contact.icon}</div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-gray-800 dark:text-gray-200">{contact.title}</p>
                       <p className="text-xs text-gray-600 dark:text-gray-400 truncate">{contact.value}</p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
                 <div className="pt-2 border-t dark:border-gray-700">
                   <Button size="sm" className="w-full" asChild>
-                    <Link to="/messages">See All Contacts</Link>
+                    <Link to="/messages" className="text-white">
+                      See All Contacts
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -180,25 +176,13 @@ const Header = () => {
                     key={index}
                     to={item.path}
                     className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${
-                      isActive(item.path) 
-                        ? 'bg-gray-100 dark:bg-[#3A3B3C] text-blue-500' 
-                        : 'hover:bg-gray-100 dark:hover:bg-[#3A3B3C]'
+                      isActive(item.path) ? 'bg-gray-100 dark:bg-[#3A3B3C] text-blue-500' : 'hover:bg-gray-100 dark:hover:bg-[#3A3B3C]'
                     }`}
                   >
-                    <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
-                      isActive(item.path) 
-                        ? 'bg-blue-100 dark:bg-blue-900/30' 
-                        : 'bg-gray-200 dark:bg-[#4E4F50]'
-                    }`}>
+                    <div className={`flex items-center justify-center w-8 h-8 rounded-full ${isActive(item.path) ? 'bg-blue-100 dark:bg-blue-900/30' : 'bg-gray-200 dark:bg-[#4E4F50]'}`}>
                       {item.icon}
                     </div>
-                    <span className={`text-sm font-medium ${
-                      isActive(item.path) 
-                        ? 'text-blue-500' 
-                        : 'text-gray-800 dark:text-gray-200'
-                    }`}>
-                      {item.title}
-                    </span>
+                    <span className={`text-sm font-medium ${isActive(item.path) ? 'text-blue-500' : 'text-gray-800 dark:text-gray-200'}`}>{item.title}</span>
                   </Link>
                 ))}
               </div>
